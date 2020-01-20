@@ -41,18 +41,14 @@ def write_to_json_file(newData):
 		json.dump(newData, f)
 
 @app.route('/')
-def hello():
+def index():
 	force_reload = request.args.get('force_reload') != None
 	print force_reload
 	question = get_question(force_reload)
 	return redirect(question, code=302)
 
 if __name__ == '__main__':
-	print get_question()
-	# Bind to PORT if defined, otherwise default to 5000.
 	app.run(host='0.0.0.0', port=5000)
-
-# import json
 
 
 
