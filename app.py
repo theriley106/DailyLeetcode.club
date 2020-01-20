@@ -1,5 +1,5 @@
 import os
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, jsonify
 from datetime import date
 import requests
 import json
@@ -40,6 +40,12 @@ def get_question(force_new=False):
 def write_to_json_file(newData):
 	with open("archive.json", 'w') as f:
 		json.dump(newData, f)
+
+@app.route('/archive')
+def archive():
+	if os.path.exists("archive.json") == False:
+		write_to_json_file({})
+	return jsonify(json.load(open("archive.json")))
 
 @app.route('/')
 def index():
