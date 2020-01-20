@@ -3,6 +3,7 @@ from flask import Flask, redirect, request
 from datetime import date
 import requests
 import json
+import random
 
 app = Flask(__name__)
 
@@ -19,7 +20,7 @@ def generate_new_question(history):
 		res = requests.get(RANDOM_QUESTION_URL, timeout=5)
 		if res.url not in previous_urls:
 			return res.url
-	return res.url
+	return random.choice(list(previous_urls))
 
 def get_question(force_new=False):
 	dateVal = get_today_date()
