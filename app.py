@@ -43,7 +43,6 @@ def write_to_json_file(newData):
 @app.route('/')
 def index():
 	force_reload = request.args.get('force_reload') != None
-	print force_reload
 	question = get_question(force_reload)
 	return redirect(question, code=302)
 
