@@ -12,7 +12,7 @@ Similar to the reasons raised in this [Quora post](https://www.quora.com/Is-Spot
 
 A user could simply click the "Shuffle" button on Leetcode and visit a random question, but there's a non-zero chance that one of Leetcode's notoriously bad questions will be chosen.  DailyLeetcodes "random" question selection tries to filter out these bad questions.
 
-The shuffling is done with a program I made a while ago called [EliteCode](https://github.com/theriley106/EliteCode), which strategically shuffles Leetcode questions to optimize DS&A study time.  The questions are shuffles based on "weights" that you can provide, which give priority to certain level questions.
+The shuffling is done with a program I made a while ago called [EliteCode](https://github.com/theriley106/EliteCode), which strategically shuffles Leetcode questions to optimize DS&A study time.  The questions are shuffled based on "weights" that are provided using a config file, and these weights give priority to certain level questions.
 
 For instance:
 
