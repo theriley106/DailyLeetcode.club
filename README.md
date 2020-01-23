@@ -12,7 +12,7 @@ Similar to the reasons raised in this [Quora post](https://www.quora.com/Is-Spot
 
 A user could simply click the "Shuffle" button on Leetcode and visit a random question, but there's a non-zero chance that one of Leetcode's notoriously bad questions will be chosen.  DailyLeetcodes "random" question selection tries to filter out these bad questions.
 
-The shuffling is done with a program I made a while ago called [EliteCode](https://github.com/theriley106/EliteCode), which strategically shuffles Leetcode questions to optimize DS&A study time.  The questions are shuffled based on "weights" that are provided using a config file, and these weights give priority to certain level questions.
+The shuffling is done with a program I made a while ago called [EliteCode](https://github.com/theriley106/EliteCode), which strategically shuffles Leetcode questions to optimize DS&A study time.  The questions are shuffled based on "weights" that are provided using a config file, and these weights give priority to questions with different levels of difficulty.
 
 For instance:
 
@@ -20,7 +20,7 @@ For instance:
 {'medium': 30, 'hard': 10, 'easy': 60}
 ```
 
-Will generate random unsolved questions that most likely fall under easy or medium difficulty, with a small chance of the question being categorized as hard.
+Will generate random questions that most likely fall under easy or medium difficulty, with a small chance of the question being categorized as hard.
 
 Meanwhile,
 
@@ -28,13 +28,13 @@ Meanwhile,
 {'medium': 50, 'hard': 10, 'easy': 10}
 ```
 
-Will generate unsolved questions that most likely fall under the medium difficulty, with a small chance of the question being categorized as easy or hard.
+Will generate questions that most likely fall under the medium difficulty, with a small chance of the question being categorized as easy or hard.
 
 ```javascript
 {'medium': 0, 'hard': 0, 'easy': 50}
 ```
 
-Will only generate unsolved Leetcode questions that are categorized as easy.
+Will only generate Leetcode questions that are categorized as easy.
 
 DailyLeetcode.club uses the following weights to generate questions:
 
