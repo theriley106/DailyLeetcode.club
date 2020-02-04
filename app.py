@@ -9,7 +9,9 @@ app = Flask(__name__)
 
 RANDOM_QUESTION_URL = "https://leetcode.com/problems/random-one-question/all"
 
-MAX_RETRY = 3
+MAX_RETRY = 500
+
+PROBLEMS = json.load(open("problems.json"))['stat_status_pairs']
 
 def get_today_date():
 	return date.today().strftime("%B %d, %Y")
@@ -17,9 +19,10 @@ def get_today_date():
 def generate_new_question(history):
 	previous_urls = set(history.values())
 	for i in range(MAX_RETRY):
-		res = requests.get(RANDOM_QUESTION_URL, timeout=5)
-		if res.url not in previous_urls:
-			return res.url
+		url = random.choice(PROBLEMS)
+		url = "https://leetcode.com/problems/{}".format(url['stat']['question__title_slug'])
+		if url not in previous_urls:
+			return url
 	return random.choice(list(previous_urls))
 
 def get_question(force_new=False):
