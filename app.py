@@ -8,9 +8,7 @@ import random
 app = Flask(__name__)
 
 RANDOM_QUESTION_URL = "https://leetcode.com/problems/random-one-question/all"
-
 MAX_RETRY = 500
-
 PROBLEMS = json.load(open("problems.json"))['stat_status_pairs']
 
 def get_today_date():
