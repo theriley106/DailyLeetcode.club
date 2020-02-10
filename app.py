@@ -10,6 +10,15 @@ app = Flask(__name__)
 RANDOM_QUESTION_URL = "https://leetcode.com/problems/random-one-question/all"
 MAX_RETRY = 10
 PROBLEMS = json.load(open("problems.json"))['stat_status_pairs']
+E_WEIGHTS = 60
+H_WEIGHTS = 10
+M_WEIGHTS = 30
+
+def random_gen_category():
+	category = ["easy" for i in range(E_WEIGHTS/10)] 
+	category += ["medium" for i in range(M_WEIGHTS/10)] 
+	category += ["hard" for i in range(H_WEIGHTS/10)] 
+	return random.choice(category)
 
 def get_today_date():
 	return date.today().strftime("%B %d, %Y")
