@@ -22,7 +22,7 @@ for val in PROBLEMS:
 	url = "https://leetcode.com/problems/" + val['stat']["question__title_slug"]
 	QUESTIONS_BY_DIFFICULTY[val['difficulty']['level']].append(url)
 
-def random_gen_category():
+def random_gen_difficulty():
 	category = [1 for i in range(E_WEIGHTS/10)] 
 	category += [2 for i in range(M_WEIGHTS/10)] 
 	category += [3 for i in range(H_WEIGHTS/10)] 
