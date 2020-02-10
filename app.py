@@ -14,6 +14,16 @@ E_WEIGHTS = 60
 M_WEIGHTS = 30
 H_WEIGHTS = 10
 
+QUESTIONS_BY_DIFFICULTY = {}
+
+for val in PROBLEMS:
+	if val['difficulty']['level'] not in QUESTIONS_BY_DIFFICULTY:
+		QUESTIONS_BY_DIFFICULTY[val['difficulty']['level']] = []
+	url = "https://leetcode.com/problems/" + val['stat']["question__title_slug"]
+	QUESTIONS_BY_DIFFICULTY[val['difficulty']['level']].append(url)
+
+raw_input(QUESTIONS_BY_DIFFICULTY)
+
 def random_gen_category():
 	category = [1 for i in range(E_WEIGHTS/10)] 
 	category += [2 for i in range(M_WEIGHTS/10)] 
