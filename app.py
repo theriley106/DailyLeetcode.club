@@ -15,9 +15,9 @@ M_WEIGHTS = 30
 H_WEIGHTS = 10
 
 def random_gen_category():
-	category = ["easy" for i in range(E_WEIGHTS/10)] 
-	category += ["medium" for i in range(M_WEIGHTS/10)] 
-	category += ["hard" for i in range(H_WEIGHTS/10)] 
+	category = [1 for i in range(E_WEIGHTS/10)] 
+	category += [2 for i in range(M_WEIGHTS/10)] 
+	category += [3 for i in range(H_WEIGHTS/10)] 
 	return random.choice(category)
 
 def get_today_date():
