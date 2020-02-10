@@ -25,7 +25,7 @@ for val in PROBLEMS:
 def random_gen_difficulty():
 	category = [1 for i in range(E_WEIGHTS/10)] 
 	category += [2 for i in range(M_WEIGHTS/10)] 
-	category += [3 for i in range(H_WEIGHTS/10)] 
+	category += [3 for i in range(H_WEIGHTS/10)]
 	return random.choice(category)
 
 def get_today_date():
@@ -34,8 +34,7 @@ def get_today_date():
 def generate_new_question(history):
 	previous_urls = set(history.values())
 	for i in range(MAX_RETRY):
-		url = random.choice(PROBLEMS)
-		url = "https://leetcode.com/problems/{}".format(url['stat']['question__title_slug'])
+		url = random.choice(QUESTIONS_BY_DIFFICULTY[random_gen_difficulty()])
 		if url not in previous_urls:
 			return url
 	return random.choice(list(previous_urls))
