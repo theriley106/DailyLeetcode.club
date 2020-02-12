@@ -60,6 +60,7 @@ def write_to_json_file(newData):
 
 @app.route('/archive')
 def archive():
+	return jsonify({"ayy": "ayy"})
 	if os.path.exists("archive.json") == False:
 		write_to_json_file({})
 	return jsonify(json.load(open("archive.json")))
