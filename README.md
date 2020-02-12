@@ -1,8 +1,8 @@
 <h1 align="center"><a href="http://dailyleetcode.club/">http://www.DailyLeetcode.club/</a></h1>
 
-### Website that redirects to a random leetcode question that rotates each day...
+## Website that redirects to a random leetcode question that rotates each day...
 
-## How are the questions picked?
+### How are the questions picked?
 
 The process of "randomly" selecting question is unnecessarily complex for no reason...
 
