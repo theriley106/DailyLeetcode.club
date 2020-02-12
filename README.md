@@ -40,7 +40,5 @@ DailyLeetcode.club uses the following weights to generate questions:
 {'medium': 30, 'hard': 10, 'easy': 60}
 ```
 
-### Archived Questions
-
-<h2 align="center">View <a href="http://dailyleetcode.herokuapp.com/archive">Question Archive</a></h2>
+<h2 align="center"><a href="http://dailyleetcode.herokuapp.com/archive">View Question Archive</a></h2>
 
